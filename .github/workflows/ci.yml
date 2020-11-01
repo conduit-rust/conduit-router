@@ -18,7 +18,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: stable
+          toolchain: 1.47.0
           override: true
           components: rustfmt, clippy
 
@@ -37,7 +37,7 @@ jobs:
   tests:
     strategy:
       matrix:
-        rust: [stable, beta, nightly]
+        rust: [1.47.0, stable, beta, nightly]
 
     name: Tests
     runs-on: ubuntu-latest
